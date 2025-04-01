@@ -50,7 +50,8 @@ SALA<br>
 . nome:string <br>
 . capacidade <br>
 +----------------------+
-
+<br>
+<br>
 
 cliente 1 ------ 0 reservas
   - Um CLIENTE pode ter várias RESERVAS.
