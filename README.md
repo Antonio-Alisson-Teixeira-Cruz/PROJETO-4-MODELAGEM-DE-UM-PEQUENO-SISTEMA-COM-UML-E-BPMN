@@ -8,28 +8,48 @@ Professor: Everson
 
 BPMN do sistema de reserva de sala:
 
-[inicio] -> [receber pedido de cadastro] -> [verificar disponibilidade] -> {sala disponível?}
-                                                    -> [sim]
-                                                        -> [fazer a reserva da sala, para o usuário]
-                                                    -> [não]
-                                                        -> [informar o cliente que não será possível a reserva]
+[inicio] -> [receber pedido de cadastro] -> [verificar disponibilidade] -> {sala disponível?}<br>
+                                                    -> [sim]<br>
+                                                        -> [fazer a reserva da sala, para o usuário]<br>
+                                                    -> [não]<br>
+                                                        -> [informar o cliente que não será possível a reserva]<br>
 
 
 UML do sistema de reserva de salas:
 
 
-+----------------------------+                +-----------------------------+           +----------------------+
-         CLIENTE                                          RESERVA                                SALA
-+----------------------------+                +-----------------------------+           +----------------------+
-  - id: int                                      - id: int                                  - id: int
-  - nome: string                                 - dataHora: dateTime                       - nome: string
-  - email: sring                                 - status: string                           - capacidade: int
-+----------------------------+                   - duração: int                         +----------------------+
-  + realizarPedidoDeReserva()                 +-----------------------------+     
-+----------------------------+                   + verificarDisponibilidade()
-                                                 + confirmarPedido()
-                                                 + informarCliente()
-                                              +-----------------------------+
++----------------------------+
+         CLIENTE
++----------------------------+                  
+  - id: int                                           
+  - nome: string                  
+  - email: sring                    
++----------------------------+
+  + realizarPedidoDeReserva()    
++----------------------------+
+
+
++-----------------------------+
+ RESERVA
++-----------------------------+
+ - id: int
+ - dataHora: dateTime
+ - status: string
+- duração: int  
++-----------------------------+
+   + verificarDisponibilidade()
+   + confirmarPedido()
+   + informarCliente()
++-----------------------------+
+
+ 
++----------------------+
+SALA
++----------------------+
+- id: int
+- nome:string
+- capacidade
++----------------------+
 
 
 cliente 1 ------ 0 reservas                                 reserva 0 ------ 1 sala
