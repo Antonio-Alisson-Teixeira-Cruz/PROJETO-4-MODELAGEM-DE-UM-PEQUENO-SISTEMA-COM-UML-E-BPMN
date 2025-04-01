@@ -18,40 +18,45 @@ BPMN do sistema de reserva de sala:
 UML do sistema de reserva de salas:
 
 
-+----------------------------+
-         CLIENTE
-+----------------------------+                  
-  - id: int                                           
-  - nome: string                  
-  - email: sring                    
-+----------------------------+
-  + realizarPedidoDeReserva()    
++----------------------------+<br>
+         CLIENTE<br>
++----------------------------+<br>                 
+  . id: int<br>
+  . nome: string<br>
+  . email: string<br>
++----------------------------+<br>
+  . realizarPedidoDeReserva()    
 +----------------------------+
 
 
-+-----------------------------+
- RESERVA
-+-----------------------------+
- - id: int
- - dataHora: dateTime
- - status: string
-- duração: int  
-+-----------------------------+
-   + verificarDisponibilidade()
-   + confirmarPedido()
-   + informarCliente()
-+-----------------------------+
++-----------------------------+<br>
+ RESERVA<br>
++-----------------------------+<br>
+ . id: int<br>
+ . dataHora: dateTime<br>
+ . status: string<br>
+ . duração: int<br>
++-----------------------------+<br>
+   . verificarDisponibilidade()<br>
+   . confirmarPedido()<br>
+   . informarCliente()<br>
++-----------------------------+<br>
 
  
-+----------------------+
-SALA
-+----------------------+
-- id: int
-- nome:string
-- capacidade
++----------------------+<br>
+SALA<br>
++----------------------+<br>
+. id: int <br>
+. nome:string <br>
+. capacidade <br>
 +----------------------+
 
 
-cliente 1 ------ 0 reservas                                 reserva 0 ------ 1 sala
-  - Um CLIENTE pode ter várias RESERVAS.                      -Várias RESERVAS equivalem a apenas uma SALA.
-  - Várias RESERVAS podem pertencer a um único CLIENTE        -Uma SALA pode ter várias RESERVAS
+cliente 1 ------ 0 reservas
+  - Um CLIENTE pode ter várias RESERVAS.
+  - Várias RESERVAS podem pertencer a um único CLIENTE
+
+ reserva 0 ------ 1 sala
+ - Várias RESERVAS equivalem a apenas uma SALA.
+ - Uma SALA pode ter várias RESERVAS
+ 
